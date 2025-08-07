@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.log
+
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# FastAPI / Uvicorn
+*.db
+*.sqlite3
+instance/
+*.pid
+
+# IDE: PyCharm
+.idea/
+
+# VS Code (если используешь)
+.vscode/
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Mypy / Pyright / Pylint
+.mypy_cache/
+.pyright/
+.pyre/
+.pytype/
+
+# Coverage / testing
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Docker
+*.orig
+*.bak
+docker-compose.override.yml
