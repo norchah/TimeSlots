@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime, String, ForeignKey, Table
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
-from db import Base
+from db.db import Base
 
 # Ассоциативная таблица для many-to-many
 user_roles = Table(

@@ -5,7 +5,7 @@ from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from db import get_db, SessionLocal, Base, engine
+from db.db import get_db, SessionLocal, Base, engine
 from models import RoleDB, UserDB, user_roles
 from routers.auth import auth_router
 from routers.bookings import booking_router
@@ -29,6 +29,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["set-cookie"],
 )
 
 # Подключаем роуты
@@ -81,4 +82,10 @@ with SessionLocal() as db:
     init_roles_and_admin(db)
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(
+        app,
+        host="127.0.0.1",
+        port=8000,
+        ssl_keyfile="certs/localhost+2-key.pem",
+        ssl_certfile="certs/localhost+2.pem",
+    )

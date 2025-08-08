@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 import models
 import schemas
-from db import get_db
+from db.db import get_db
 
 roles_router = APIRouter(tags=["Roles"])
 

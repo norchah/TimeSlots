@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 import models
 import schemas
-from db import get_db
+from db.db import get_db
 from utils.check_timeslot_overlap import check_timeslot_overlap
 from utils.has_role import has_role
 
