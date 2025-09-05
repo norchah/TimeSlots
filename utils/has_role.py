@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from models import user_roles, RoleDB
+from models.users import user_roles, RoleDB
 
 
 def has_role(db: Session, user_id: int, required_role: str) -> bool:

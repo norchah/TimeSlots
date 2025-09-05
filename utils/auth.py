@@ -54,7 +54,9 @@ def set_jwt_cookie(response, token):
         httponly=True,  # Защита от XSS
         secure=True,  # Для localhost, в проде True
         samesite="none",  # Защита от CSRF
-        max_age=30 * 60  # 30 минут
+        max_age=30 * 60,  # 30 минут
+        path="/",  # Доступна для всех маршрутов
+        domain="localhost",
     )
 
 
@@ -65,4 +67,6 @@ def del_jwt_cookie(response):
         httponly=True,  # Защита от XSS
         secure=True,  # Для localhost, в проде True
         samesite="none",  # Защита от CSRF
+        path="/",
+        domain="localhost",
     )

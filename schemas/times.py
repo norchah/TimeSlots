@@ -3,27 +3,6 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 
 
-class RoleCreate(BaseModel):
-    name: str = Field(..., min_length=3)
-    description: str | None = None
-
-
-class RoleResponse(BaseModel):
-    id: int
-    name: str
-    description: str | None = None
-
-
-class UserCreate(BaseModel):
-    username: str = Field(..., min_length=3)
-
-
-class UserResponse(BaseModel):
-    id: int
-    username: str
-    roles: list[RoleResponse]
-
-
 class TimeSlotCreate(BaseModel):
     provider_id: int
     start_time: datetime

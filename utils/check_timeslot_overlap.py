@@ -4,7 +4,7 @@ from sqlalchemy import String
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import func
 
-from models import TimeSlotDB
+from ..models.times import TimeSlotDB
 
 
 def check_timeslot_overlap(
